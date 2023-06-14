@@ -23,15 +23,15 @@
     [Install]
     WantedBy=multi-user.target
 
-# ngnix config /etc/nginx/sites-available/<HOSTNAME>
+# ngnix config /etc/nginx/sites-available/hostname
 
 
     server {
     
-            root /var/www/atak.zip/html;
-            index index.html index.htm index.nginx-debian.html;
+            root /var/www/hostname/html;
+            index index.html
     
-            server_name atak.zip;
+            server_name hostname;
     
     
             location / {
@@ -43,14 +43,14 @@
     
         listen [::]:443 ssl ipv6only=on; # managed by Certbot
         listen 443 ssl; # managed by Certbot
-        ssl_certificate /etc/letsencrypt/live/takserver.me/fullchain.pem; # managed by Certbot
-        ssl_certificate_key /etc/letsencrypt/live/takserver.me/privkey.pem; # managed by Certbot
+        ssl_certificate /etc/letsencrypt/live/hostname/fullchain.pem; # managed by Certbot
+        ssl_certificate_key /etc/letsencrypt/live/hostname/privkey.pem; # managed by Certbot
         include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
         ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
     
     }
     server {
-        if ($host = atak.zip) {
+        if ($host = hostname) {
             return 301 https://$host$request_uri;
         } # managed by Certbot
     
@@ -58,6 +58,8 @@
             listen 80;
             listen [::]:80;
     
-            server_name atak.zip;
+            server_name hostname;
         return 404; # managed by Certbot
     }
+
+Note: Replace hostname with your actual fqdn
