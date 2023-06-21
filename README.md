@@ -1,5 +1,15 @@
 # cloudDP
- ATAK Plugin for secure datapackage sharing
+ ATAK Plugin for secure datapackage sharing.
+
+ The purpose of this plugin is to provide a streamlined method to share datapackages without a TAK Server.
+
+ The plugin provides a way to upload datapackages to the cloud securely with AES.
+
+ The upload specifies their own password which will be used to encrypt the datapackage on the server.
+
+ The server will respond to the uploader with a unique download code (8 alphanumeric characters) that can be distributed to inteded recipients.
+
+ The downloader will need both the password and unique download code to successfully download the datapackage. Once downloaded the DP is ingested automatically.
 
 # systemd service /etc/systemd/system/atakcode.service
  An example systemd service configuration
