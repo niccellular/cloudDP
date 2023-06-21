@@ -7,7 +7,7 @@
 
  The uploader specifies their own password which is used to encrypt the datapackage on the server.
 
- This password is never transmitted and resides only in memory to perform the AES encryption.
+ This password is never transmitted and resides only in memory to perform the AES encryption/decryption.
 
  The server will respond to the uploader with a unique download code (8 alphanumeric characters) that can be distributed to inteded recipients.
 
