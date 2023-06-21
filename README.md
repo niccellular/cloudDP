@@ -3,9 +3,11 @@
 
  The purpose of this plugin is to provide a streamlined method to share datapackages without a TAK Server.
 
- The plugin provides a way to upload datapackages to the cloud securely with AES.
+ The plugin provides a capability to upload datapackages to the cloud securely with AES.
 
- The upload specifies their own password which will be used to encrypt the datapackage on the server.
+ The uploader specifies their own password which is used to encrypt the datapackage on the server.
+
+ This password is never transmitted and resides only in memory to perform the AES encryption.
 
  The server will respond to the uploader with a unique download code (8 alphanumeric characters) that can be distributed to inteded recipients.
 
